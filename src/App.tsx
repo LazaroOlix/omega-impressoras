@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Layout } from './components/Layout';
 import { Dashboard } from './components/Dashboard';
 import { NewOS } from './components/NewOS';
 import { OSList } from './components/OSList';
@@ -23,7 +22,6 @@ function App() {
 
   return (
     <HashRouter>
-      <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/nova-os" element={<NewOS />} />
@@ -31,7 +29,6 @@ function App() {
           <Route path="/os/:id" element={<OSDetails />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </Layout>
     </HashRouter>
   );
 }
